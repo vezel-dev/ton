@@ -14,7 +14,7 @@ This package provides the Language Server Protocol implementation.</PackageDescr
     </ItemGroup>
 
     <ItemGroup>
-        <!-- TODO: <PackageReference Include="Draco.Lsp" />-->
+        <PackageReference Include="Draco.Lsp" />
     </ItemGroup>
 
     <Import Project="../core/core.targets" />
