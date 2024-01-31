@@ -43,16 +43,20 @@ constructs may not be translated.
 ## ton format
 
 ```text
-ton format <input> [options...]
+ton format [input] [options...]
 ```
 
 Formats a TON code or data file according to the official formatting
-conventions.
+conventions, or optionally in a minified fashion.
+
+If no input file is given, this command reads from standard output and `--fix`
+will be ignored.
 
 | Option | Description | Default |
 | - | - | - |
-| `--fix` | Enables automatic in-place fixing. | `true` |
-| `--diff` | Enables printing diffs for offending code. | `true` |
+| `--fix` | Enables automatic in-place fixing. | `false` |
+| `--diff` | Enables printing diffs instead of formatted code. | `false` |
+| `--minify` | Enables minification instead of normal formatting. | `false` |
 
 ## ton info
 
@@ -61,29 +65,6 @@ ton info
 ```
 
 Prints runtime environment information.
-
-## ton minify
-
-```text
-ton minify <input> <output>
-```
-
-Formats a TON code or data file to be as small as possible while still remaining
-valid.
-
-This can be useful when transferring TON files over a network.
-
-## ton pretty
-
-```text
-ton pretty [input]
-```
-
-Pretty-prints a TON code or data file according to the official formatting
-conventions.
-
-The result is printed to standard output. If no file is given, this command
-reads from standard input.
 
 ## ton reduce
 
