@@ -1,0 +1,219 @@
+{
+  "name": "ton",
+  "displayName": "TON",
+  "description": "TON language support for Visual Studio Code.",
+  "publisher": "vezel",
+  "preview": true,
+  "license": "0BSD",
+  "homepage": "https://docs.vezel.dev/ton",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vezel-dev/ton"
+  },
+  "bugs": {
+    "url": "https://github.com/vezel-dev/ton/issues"
+  },
+  "qna": "https://github.com/vezel-dev/ton/discussions",
+  "sponsor": {
+    "url": "https://github.com/sponsors/vezel-dev"
+  },
+  "icon": "ton.png",
+  "badges": [
+    {
+      "description": "License",
+      "url": "https://img.shields.io/github/license/vezel-dev/ton?color=brown",
+      "href": "https://github.com/vezel-dev/ton/blob/master/LICENSE-0BSD"
+    },
+    {
+      "description": "Commits",
+      "url": "https://img.shields.io/github/commit-activity/m/vezel-dev/ton/master?label=commits&color=slateblue",
+      "href": "https://github.com/vezel-dev/ton/commits/master"
+    },
+    {
+      "description": "Build",
+      "url": "https://img.shields.io/github/actions/workflow/status/vezel-dev/ton/build.yml?branch=master",
+      "href": "https://github.com/vezel-dev/ton/actions/workflows/build.yml"
+    },
+    {
+      "description": "Discussions",
+      "url": "https://img.shields.io/github/discussions/vezel-dev/ton?color=teal",
+      "href": "https://github.com/vezel-dev/ton/discussions"
+    },
+    {
+      "description": "Discord",
+      "url": "https://img.shields.io/discord/960716713136095232?color=peru&label=discord",
+      "href": "https://discord.gg/uD8maMVVFX"
+    }
+  ],
+  "categories": [
+    "Formatters",
+    "Programming Languages",
+    "Snippets"
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "vscode": "^1.83.0"
+  },
+  "extensionKind": [
+    "workspace"
+  ],
+  "capabilities": {
+    "virtualWorkspaces": false,
+    "untrustedWorkspaces": {
+      "supported": false
+    }
+  },
+  "activationEvents": [
+    "onLanguage:ton"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "ton.startServer",
+        "category": "TON",
+        "title": "Start Language Server"
+      },
+      {
+        "command": "ton.stopServer",
+        "category": "TON",
+        "title": "Stop Language Server"
+      },
+      {
+        "command": "ton.restartServer",
+        "category": "TON",
+        "title": "Restart Language Server"
+      }
+    ],
+    "configuration": [
+      {
+        "title": "TON",
+        "properties": {
+          "ton.autoStartServer": {
+            "title": "Auto-Start Language Server",
+            "scope": "machine",
+            "type": "boolean",
+            "default": true,
+            "markdownDescription": "Controls whether the language server starts automatically."
+          },
+          "ton.executablePath": {
+            "title": "Executable Path",
+            "scope": "machine",
+            "type": "string",
+            "format": "path",
+            "default": "ton",
+            "markdownDescription": "Configures the path to the `ton` executable."
+          },
+          "ton.serverLogLevel": {
+            "title": "Language Server Log Level",
+            "scope": "machine",
+            "type": "string",
+            "enum": [
+              "critical",
+              "error",
+              "warning",
+              "information",
+              "debug",
+              "trace"
+            ],
+            "default": "information",
+            "markdownDescription": "Controls the language server log level."
+          },
+          "ton.trace.server": {
+            "title": "Language Server Tracing",
+            "scope": "machine",
+            "type": "string",
+            "enum": [
+              "off",
+              "messages",
+              "verbose"
+            ],
+            "default": "off",
+            "markdownDescription": "Enables tracing of communication with the language server."
+          }
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ton",
+        "scopeName": "source.ton",
+        "path": "syntaxes/ton.tmLanguage.json"
+      }
+    ],
+    "languages": [
+      {
+        "id": "ton",
+        "aliases": [
+          "TON"
+        ],
+        "icon": {
+          "light": "ton.svg",
+          "dark": "ton.svg"
+        },
+        "extensions": [
+          ".ton"
+        ],
+        "configuration": "language-configuration.json"
+      }
+    ],
+    "problemMatchers": [
+      {
+        "name": "ton",
+        "owner": "ton",
+        "fileLocation": "relative",
+        "pattern": [
+          {
+            "regexp": "^(Warning|Error)\\[(.+)\\]: (.+)$",
+            "severity": 1,
+            "code": 2,
+            "message": 3
+          },
+          {
+            "regexp": "^---*> (.+) \\((\\d+),(\\d+)\\)-\\((\\d+),(\\d+)\\)$",
+            "file": 1,
+            "line": 2,
+            "column": 3,
+            "endLine": 4,
+            "endColumn": 5
+          }
+        ]
+      }
+    ],
+    "snippets": [
+      {
+        "language": "ton",
+        "path": "snippets/ton.snippets.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@stylistic/eslint-plugin": "1.5.4",
+    "@types/node": "18.15.0",
+    "@types/vscode": "1.83.0",
+    "@typescript-eslint/eslint-plugin": "6.20.0",
+    "@typescript-eslint/parser": "6.20.0",
+    "@vscode/vsce": "2.23.0",
+    "cpy-cli": "5.0.0",
+    "esbuild": "0.20.0",
+    "eslint": "8.56.0",
+    "js-yaml": "4.1.0",
+    "mkdirp": "3.0.1",
+    "nerdbank-gitversioning": "3.6.133",
+    "ovsx": "0.8.3",
+    "rimraf": "5.0.5",
+    "symlink-dir": "5.2.1",
+    "typescript": "5.3.3"
+  },
+  "dependencies": {
+    "vscode-languageclient": "9.0.1"
+  },
+  "scripts": {
+    "build": "tsc --noEmit && eslint src --ext ts && rimraf ../../out/bin/src/vscode && esbuild src/extension.ts --external:vscode --platform=node --target=es2022 --bundle --minify --sourcemap --outdir=../../out/bin/src/vscode && cpy README.md language-configuration.json package.json snippets ../../out/bin/src/vscode && mkdirp ../../out/bin/src/vscode/syntaxes && js-yaml syntaxes/ton.tmLanguage.yml > ../../out/bin/src/vscode/syntaxes/ton.tmLanguage.json && symlink-dir node_modules ../../out/bin/src/vscode/node_modules && cd ../../out/bin/src/vscode && cpy ../../../../LICENSE-0BSD . --flat --rename=LICENSE && cpy \"../../../../ton.{png,svg}\" . --flat && nbgv-setversion",
+    "pack": "cd ../../out/bin/src/vscode && mkdirp ../../../pkg/vscode && vsce package -o ../../../pkg/vscode"
+  },
+  "vsce": {
+    "dependencies": false,
+    "prerelease": true
+  },
+  "main": "extension.js"
+}

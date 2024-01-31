@@ -1,0 +1,38 @@
+<Project>
+    <PropertyGroup>
+        <Product>TON</Product>
+        <Description>$(Product) is a human-friendly language for programmatic authoring and safe interchange of tree-structured data.</Description>
+        <Company>Vezel</Company>
+        <Authors>$(Company) Contributors</Authors>
+        <Copyright>Copyright © $(Authors)</Copyright>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <AnalysisLevel>latest-all</AnalysisLevel>
+        <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+        <EnablePackageValidation>true</EnablePackageValidation>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <ImplicitUsings>true</ImplicitUsings>
+        <IsPackable>false</IsPackable>
+        <IsPublishable>false</IsPublishable>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <PackRelease>false</PackRelease>
+        <PackageLicenseExpression>0BSD</PackageLicenseExpression>
+        <PackageProjectUrl>https://docs.vezel.dev/ton</PackageProjectUrl>
+        <PolySharpIncludeRuntimeSupportedAttributes>true</PolySharpIncludeRuntimeSupportedAttributes>
+        <PublishRelease>false</PublishRelease>
+        <RepositoryUrl>https://github.com/vezel-dev/ton.git</RepositoryUrl>
+        <TargetFramework>net8.0</TargetFramework>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <UseArtifactsOutput>true</UseArtifactsOutput>
+        <ArtifactsPath>$(MSBuildThisFileDirectory)out</ArtifactsPath>
+        <ArtifactsProjectName>$([MSBuild]::MakeRelative('$(MSBuildThisFileDirectory)', '$(MSBuildProjectDirectory)'))</ArtifactsProjectName>
+        <ArtifactsPublishOutputName>pub</ArtifactsPublishOutputName>
+        <ArtifactsPackageOutputName>pkg/dotnet</ArtifactsPackageOutputName>
+    </PropertyGroup>
+</Project>

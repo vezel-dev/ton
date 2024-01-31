@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET: Attach",
+      "presentation": {
+        "group": "ton"
+      },
+      "type": "coreclr",
+      "request": "attach",
+      "suppressJITOptimizations": true,
+      "justMyCode": false,
+      "symbolOptions": {
+        "searchMicrosoftSymbolServer": true,
+        "searchNuGetOrgSymbolServer": true
+      },
+      "processId": "${command:pickProcess}"
+    },
+    {
+      "name": "VS Code: Launch Extension",
+      "presentation": {
+        "group": "ton"
+      },
+      "type": "extensionHost",
+      "request": "launch",
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}/out/bin/src/vscode"
+      ]
+    }
+  ]
+}

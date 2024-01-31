@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <!--
+    This project exists solely so that we can get full trimming analysis of the
+    library projects when running dotnet publish.
+    -->
+
+    <PropertyGroup>
+        <AssemblyName>trimming</AssemblyName>
+        <IsPublishable>true</IsPublishable>
+        <OutputType>Exe</OutputType>
+        <PublishTrimmed>true</PublishTrimmed>
+        <RootNamespace>Vezel.Ton.Trimming</RootNamespace>
+        <SelfContained>true</SelfContained>
+        <UseCurrentRuntimeIdentifier>true</UseCurrentRuntimeIdentifier>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <TrimmerRootAssembly Include="Vezel.Ton" />
+        <TrimmerRootAssembly Include="Vezel.Ton.Common" />
+        <TrimmerRootAssembly Include="Vezel.Ton.Service" />
+        <TrimmerRootAssembly Include="Vezel.Ton.Tooling" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="../common/common.csproj" />
+        <ProjectReference Include="../core/core.csproj" />
+        <ProjectReference Include="../service/service.csproj" />
+        <ProjectReference Include="../tooling/tooling.csproj" />
+    </ItemGroup>
+</Project>

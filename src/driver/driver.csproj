@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <AssemblyName>ton</AssemblyName>
+        <CopyDebugSymbolFilesFromPackages Condition="'$(DebugSymbols)' == 'true'">true</CopyDebugSymbolFilesFromPackages>
+        <IsPackable>true</IsPackable>
+        <IsPublishable>true</IsPublishable>
+        <OutputType>Exe</OutputType>
+        <PackAsTool>true</PackAsTool>
+        <PackageDescription>$(Description)
+
+This package provides the .NET global tool.</PackageDescription>
+        <PackageId>ton</PackageId>
+        <RollForward>LatestMajor</RollForward>
+        <RootNamespace>Vezel.Ton.Driver</RootNamespace>
+        <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+        <ServerGarbageCollection>true</ServerGarbageCollection>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Using Include="CommandLine" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="../service/service.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="CommandLineParser" />
+        <PackageReference Include="DiffPlex" />
+        <PackageReference Include="Vezel.Cathode" />
+    </ItemGroup>
+
+    <Import Project="../core/core.targets" />
+    <Import Project="../service/service.targets" />
+    <Import Project="../tooling/tooling.targets" />
+</Project>

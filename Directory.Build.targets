@@ -1,0 +1,71 @@
+<Project>
+    <PropertyGroup>
+        <NBGV_ThisAssemblyNamespace>$(RootNamespace)</NBGV_ThisAssemblyNamespace>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(IsTestProject)' == 'true'">
+        <VSTestLogger>trx</VSTestLogger>
+        <VSTestResultsDirectory>$(ArtifactsPath)/trx/$(ArtifactsProjectName)/$(ArtifactsPivots)</VSTestResultsDirectory>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Using Include="System.CodeDom.Compiler" />
+        <Using Include="System.Diagnostics.CodeAnalysis" />
+        <Using Include="System.Runtime.CompilerServices" />
+        <Using Include="System.Runtime.InteropServices" />
+        <Using Include="System.Text" />
+        <Using Include="System.Xml" />
+        <Using Include="System.Xml.Schema" />
+        <Using Include="System.Xml.Serialization" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <AdditionalFiles Include="$(MSBuildThisFileDirectory).stylecop.json" />
+    </ItemGroup>
+
+    <Choose>
+        <When Condition="'$(IsPackable)' == 'true'">
+            <PropertyGroup>
+                <ApplicationIcon Condition="'$(OutputType)' != 'Library'">$(MSBuildThisFileDirectory)ton.ico</ApplicationIcon>
+                <IsAotCompatible Condition="'$(OutputType)' == 'Library'">true</IsAotCompatible>
+                <PackageIcon>ton.png</PackageIcon>
+                <PackageReadmeFile>PACKAGE.md</PackageReadmeFile>
+            </PropertyGroup>
+
+            <ItemGroup>
+                <None Include="$(MSBuildThisFileDirectory)PACKAGE.md; $(MSBuildThisFileDirectory)ton.png"
+                      Pack="true"
+                      PackagePath=""
+                      Visible="false" />
+                <None Include="$(MSBuildProjectName).targets"
+                      Pack="true"
+                      PackagePath="buildTransitive/$(PackageId).targets"
+                      Condition="'$(OutputType)' == 'Library' and Exists('$(MSBuildProjectName).targets')" />
+            </ItemGroup>
+        </When>
+    </Choose>
+
+    <Target Name="_SetReleaseNotes"
+            DependsOnTargets="GetBuildVersion"
+            BeforeTargets="GenerateNuspec"
+            Condition="'$(IsPackable)' == 'true' and '$(PublicRelease)' == 'true'">
+        <PropertyGroup>
+            <PackageReleaseNotes>https://github.com/vezel-dev/ton/releases/tag/v$(Version)</PackageReleaseNotes>
+        </PropertyGroup>
+    </Target>
+
+    <!--
+    Get rid of the restored package(s) in the repository's local package cache.
+    This ensures that people will not have to fiddle around with removing these
+    manually when iterating on changes locally.
+    -->
+    <Target Name="_ClearPackageCache"
+            AfterTargets="Clean; Pack"
+            Condition="'$(IsPackable)' == 'true'">
+        <ItemGroup>
+            <_CachedFiles Include="$(NuGetPackageRoot)/$(PackageId.ToLowerInvariant())/**" />
+        </ItemGroup>
+
+        <Delete Files="@(_CachedFiles)" />
+    </Target>
+</Project>

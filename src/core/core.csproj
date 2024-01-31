@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <AssemblyName>Vezel.Ton</AssemblyName>
+        <IsPackable>true</IsPackable>
+        <PackageDescription>$(Description)
+
+This package provides core parsing, analysis, and runtime services.</PackageDescription>
+        <PackageId>Vezel.Ton</PackageId>
+        <RootNamespace>Vezel.Ton</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Using Include="DotNext.Runtime" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <AdditionalFiles Include="Semantics/Tree/SemanticTree.xml" />
+        <AdditionalFiles Include="Syntax/Tree/SyntaxTree.xml" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="../common/common.csproj" />
+        <ProjectReference Include="../generators/generators.csproj"
+                          OutputItemType="Analyzer"
+                          ReferenceOutputAssembly="false" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="DotNext" />
+    </ItemGroup>
+</Project>

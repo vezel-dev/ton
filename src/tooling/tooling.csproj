@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <AssemblyName>Vezel.Ton.Tooling</AssemblyName>
+        <IsPackable>true</IsPackable>
+        <PackageDescription>$(Description)
+
+This package provides user-facing tooling such as syntax coloring and diagnostic
+rendering.</PackageDescription>
+        <PackageId>Vezel.Ton.Tooling</PackageId>
+        <RootNamespace>Vezel.Ton</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="../core/core.csproj" />
+    </ItemGroup>
+
+    <Import Project="../core/core.targets" />
+</Project>

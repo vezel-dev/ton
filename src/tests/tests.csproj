@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <AssemblyName>Vezel.Ton.Tests</AssemblyName>
+        <RootNamespace>Vezel.Ton.Tests</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Using Include="DiffEngine" />
+        <Using Include="Shouldly" />
+        <Using Include="VerifyXunit" />
+        <Using Remove="VerifyXunit.Verifier" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="../driver/driver.csproj"
+                          ReferenceOutputAssembly="false" />
+        <ProjectReference Include="../tooling/tooling.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Meziantou.Xunit.ParallelTestFramework" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" />
+        <PackageReference Include="Shouldly" />
+        <PackageReference Include="Verify.DiffPlex" />
+        <PackageReference Include="Verify.Xunit" />
+        <PackageReference Include="xunit" />
+        <PackageReference Include="xunit.runner.visualstudio" />
+    </ItemGroup>
+
+    <Import Project="../core/core.targets" />
+    <Import Project="../tooling/tooling.targets" />
+</Project>

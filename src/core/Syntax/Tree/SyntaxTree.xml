@@ -1,0 +1,3 @@
+<Tree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="https://vezel.dev/ton/SyntaxTree"
+      xsi:schemaLocation="https://vezel.dev/ton/SyntaxTree ../../../generators/Syntax/SyntaxTree.xsd" />
