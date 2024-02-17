@@ -10,7 +10,7 @@
 
 This package provides the .NET global tool.</PackageDescription>
         <PackageId>ton</PackageId>
-        <RollForward>LatestMajor</RollForward>
+        <RollForward>Major</RollForward>
         <RootNamespace>Vezel.Ton.Driver</RootNamespace>
         <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
         <ServerGarbageCollection>true</ServerGarbageCollection>
