@@ -24,7 +24,7 @@
         <PackageVersion Include="CommandLineParser"
                         Version="2.9.1" />
         <PackageVersion Include="DotNext"
-                        Version="5.0.2" />
+                        Version="5.0.3" />
         <PackageVersion Include="Draco.Lsp"
                         Version="0.3.4-pre" />
         <PackageVersion Include="Meziantou.Xunit.ParallelTestFramework"
