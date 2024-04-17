@@ -26,10 +26,7 @@
     <Choose>
         <When Condition="'$(IsPackable)' == 'true'">
             <PropertyGroup>
-                <ApplicationIcon Condition="'$(OutputType)' != 'Library'">$(MSBuildThisFileDirectory)ton.ico</ApplicationIcon>
                 <IsAotCompatible Condition="'$(OutputType)' == 'Library'">true</IsAotCompatible>
-                <PackageIcon>ton.png</PackageIcon>
-                <PackageReadmeFile>PACKAGE.md</PackageReadmeFile>
             </PropertyGroup>
 
             <ItemGroup>

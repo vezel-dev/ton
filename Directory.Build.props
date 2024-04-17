@@ -10,6 +10,7 @@
     <PropertyGroup>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <AnalysisLevel>latest-all</AnalysisLevel>
+        <ApplicationIcon>$(MSBuildThisFileDirectory)ton.ico</ApplicationIcon>
         <DisableRuntimeMarshalling>true</DisableRuntimeMarshalling>
         <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
         <EnablePackageValidation>true</EnablePackageValidation>
@@ -20,8 +21,10 @@
         <LangVersion>latest</LangVersion>
         <Nullable>enable</Nullable>
         <PackRelease>false</PackRelease>
+        <PackageIcon>ton.png</PackageIcon>
         <PackageLicenseExpression>0BSD</PackageLicenseExpression>
         <PackageProjectUrl>https://docs.vezel.dev/ton</PackageProjectUrl>
+        <PackageReadmeFile>PACKAGE.md</PackageReadmeFile>
         <PolySharpIncludeRuntimeSupportedAttributes>true</PolySharpIncludeRuntimeSupportedAttributes>
         <PublishRelease>false</PublishRelease>
         <RepositoryUrl>https://github.com/vezel-dev/ton.git</RepositoryUrl>
