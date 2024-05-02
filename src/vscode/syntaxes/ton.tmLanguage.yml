@@ -3,51 +3,51 @@ uuid: bbe9ac97-90ba-4d64-8502-4602a1132436
 name: ton
 scopeName: source.ton
 fileTypes:
-    - ton
+  - ton
 
 # This grammar is intentionally simple and only performs classification according to the lexical grammar. It also is not
 # entirely faithful to the formal language grammar. More advanced (and 100% correct) classification based on the
 # syntactic grammar and semantic knowledge is left to the language server.
 patterns:
-    - name: comment.line.ton
-      match: '\s*//.*'
-    - name: constant.language.ton
-      match: '\b(false|inf|nan|null|true|undef)\b'
-    - name: constant.numeric.float.ton
-      match: '[0-9](_*[0-9])*\.[0-9](_*[0-9])*([eE][\+-]?[0-9](_*[0-9])*)?'
-    - name: constant.numeric.integer.ton
-      match: '0([oO][0-7](_*[0-7])*|[bB][0-1](_*[0-1])*|[xX][0-9a-fA-F](_*[0-9a-fA-F])*)|[0-9](_*[0-9])*'
-    - name: keyword.control.ton
-      match: '\b(break|continue|for|in|return|while)\b'
-    - name: keyword.control.conditional.ton
-      match: '\b(else|if)\b'
-    - name: keyword.declaration.ton
-      match: '\b(export|import|pragma)\b'
-    - name: keyword.expression.ton
-      match: '\b(expand|function|record|this|with)\b'
-    - name: keyword.operator.ton
-      match: '==|!=|>=?|<=?|\?\?'
-    - name: keyword.operator.arithmetic.ton
-      match: '+|-|\*|/|%'
-    - name: keyword.operator.assignment.ton
-      match: '=\??'
-    - name: keyword.operator.bitwise.ton
-      match: '~|\&|\||\^|>>>?|<<'
-    - name: keyword.operator.word.ton
-      match: '\b(and|not|or)\b'
-    - name: punctuation.ton
-      match: '#|\(|\)|\[|\]|\{|\}'
-    - name: punctuation.accessor.ton
-      match: '\.\??|:|->'
-    - name: punctuation.separator.ton
-      match: ','
-    - name: punctuation.terminator.ton
-      match: ';'
-    - name: string.quoted.double.ton
-      begin: '"'
-      end: '"'
-    - name: variable.other.ton
-      match: '[a-zA-Z][_0-9a-zA-Z]*'
-    - name: variable.other.quoted.ton
-      begin: "'"
-      end: "'"
+  - name: comment.line.ton
+    match: '\s*//.*'
+  - name: constant.language.ton
+    match: '\b(false|inf|nan|null|true|undef)\b'
+  - name: constant.numeric.float.ton
+    match: '[0-9](_*[0-9])*\.[0-9](_*[0-9])*([eE][\+-]?[0-9](_*[0-9])*)?'
+  - name: constant.numeric.integer.ton
+    match: '0([oO][0-7](_*[0-7])*|[bB][0-1](_*[0-1])*|[xX][0-9a-fA-F](_*[0-9a-fA-F])*)|[0-9](_*[0-9])*'
+  - name: keyword.control.ton
+    match: '\b(break|continue|for|in|return|while)\b'
+  - name: keyword.control.conditional.ton
+    match: '\b(else|if)\b'
+  - name: keyword.declaration.ton
+    match: '\b(export|import|pragma)\b'
+  - name: keyword.expression.ton
+    match: '\b(expand|function|record|this|with)\b'
+  - name: keyword.operator.ton
+    match: '==|!=|>=?|<=?|\?\?'
+  - name: keyword.operator.arithmetic.ton
+    match: '+|-|\*|/|%'
+  - name: keyword.operator.assignment.ton
+    match: '=\??'
+  - name: keyword.operator.bitwise.ton
+    match: '~|\&|\||\^|>>>?|<<'
+  - name: keyword.operator.word.ton
+    match: '\b(and|not|or)\b'
+  - name: punctuation.ton
+    match: '#|\(|\)|\[|\]|\{|\}'
+  - name: punctuation.accessor.ton
+    match: '\.\??|:|->'
+  - name: punctuation.separator.ton
+    match: ','
+  - name: punctuation.terminator.ton
+    match: ';'
+  - name: string.quoted.double.ton
+    begin: '"'
+    end: '"'
+  - name: variable.other.ton
+    match: '[a-zA-Z][_0-9a-zA-Z]*'
+  - name: variable.other.quoted.ton
+    begin: "'"
+    end: "'"
