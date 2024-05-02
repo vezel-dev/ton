@@ -325,4 +325,8 @@ Task("upload-vscode-ovsx")
     .IsDependentOn("pack-vscode")
     .Does(() => UploadVSCode("ovsx", ovsxToken));
 
+Task("upload-vscode")
+    .IsDependentOn("upload-vscode-vsce")
+    .IsDependentOn("upload-vscode-ovsx");
+
 RunTarget(target);
