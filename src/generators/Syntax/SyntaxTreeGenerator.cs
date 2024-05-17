@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: 0BSD
+
 namespace Vezel.Ton.Generators.Syntax;
 
 [Generator]
@@ -38,6 +40,8 @@ public sealed class SyntaxTreeGenerator : IIncrementalGenerator
         var sb = new StringBuilder();
         using var writer = new IndentedTextWriter(new StringWriter(sb));
 
+        writer.WriteLine("// SPDX-License-Identifier: 0BSD");
+        writer.WriteLine();
         writer.WriteLine("#nullable enable");
         writer.WriteLine();
         writer.WriteLine("using Vezel.Ton.Syntax.Tree;");

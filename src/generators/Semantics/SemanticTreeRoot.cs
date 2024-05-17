@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: 0BSD
+
 namespace Vezel.Ton.Generators.Semantics;
 
 [XmlRoot("Tree", Namespace = "https://vezel.dev/ton/SemanticTree")]

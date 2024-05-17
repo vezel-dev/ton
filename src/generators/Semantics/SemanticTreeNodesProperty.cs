@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: 0BSD
+
 namespace Vezel.Ton.Generators.Semantics;
 
 public sealed class SemanticTreeNodesProperty : SemanticTreeProperty

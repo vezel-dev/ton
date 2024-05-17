@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: 0BSD
+
 namespace Vezel.Ton.Generators.Syntax;
 
 [XmlRoot("Tree", Namespace = "https://vezel.dev/ton/SyntaxTree")]

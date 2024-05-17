@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: 0BSD
+
 namespace Vezel.Ton.Generators.Syntax;
 
 public abstract class SyntaxTreeProperty
