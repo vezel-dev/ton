@@ -1,5 +1,9 @@
 # Home
 
+{% hint style="warning" %}
+This is currently in-development vaporware.
+{% endhint %}
+
 **TON** (Tree Object Notation) is a modern data language featuring two dialects:
 One for programmatic generation of data, and a static subset for safe data
 interchange.
