@@ -207,6 +207,7 @@
     "ovsx": "0.9.1",
     "rimraf": "6.0.1",
     "symlink-dir": "6.0.1",
+    "touch": "3.1.1",
     "typescript": "5.5.3",
     "typescript-eslint": "7.16.0"
   },
@@ -214,7 +215,7 @@
     "vscode-languageclient": "9.0.1"
   },
   "scripts": {
-    "build": "tsc --noEmit && eslint src && rimraf ../../out/bin/src/vscode && esbuild src/extension.ts --external:vscode --platform=node --target=es2022 --bundle --minify --sourcemap --outdir=../../out/bin/src/vscode && cpy README.md language-configuration.json package.json snippets ../../out/bin/src/vscode && mkdirp ../../out/bin/src/vscode/syntaxes && js-yaml syntaxes/ton.tmLanguage.yml > ../../out/bin/src/vscode/syntaxes/ton.tmLanguage.json && symlink-dir node_modules ../../out/bin/src/vscode/node_modules && cd ../../out/bin/src/vscode && cpy ../../../../LICENSE-0BSD . --flat --rename=LICENSE && cpy \"../../../../ton.{png,svg}\" . --flat && touch .vscodeignore && nbgv-setversion",
+    "build": "tsc --noEmit && eslint src && rimraf ../../out/bin/src/vscode && esbuild src/extension.ts --external:vscode --platform=node --target=es2022 --bundle --minify --sourcemap --outdir=../../out/bin/src/vscode && cpy README.md language-configuration.json package.json snippets ../../out/bin/src/vscode && mkdirp ../../out/bin/src/vscode/syntaxes && js-yaml syntaxes/ton.tmLanguage.yml > ../../out/bin/src/vscode/syntaxes/ton.tmLanguage.json && symlink-dir node_modules ../../out/bin/src/vscode/node_modules && cd ../../out/bin/src/vscode && cpy ../../../../LICENSE-0BSD . --flat --rename=LICENSE && cpy \"../../../../ton.{png,svg}\" . --flat && nodetouch .vscodeignore && nbgv-setversion",
     "pack": "cd ../../out/bin/src/vscode && mkdirp ../../../pkg/vscode && vsce package -o ../../../pkg/vscode"
   },
   "vsce": {
