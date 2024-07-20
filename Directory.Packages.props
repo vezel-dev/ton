@@ -26,7 +26,7 @@
         <PackageVersion Include="DotNext"
                         Version="5.7.0" />
         <PackageVersion Include="Draco.Lsp"
-                        Version="0.3.4-pre" />
+                        Version="0.3.6-pre" />
         <PackageVersion Include="Meziantou.Xunit.ParallelTestFramework"
                         Version="2.2.0" />
         <PackageVersion Include="Microsoft.CodeAnalysis.CSharp"
