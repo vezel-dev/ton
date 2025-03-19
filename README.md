@@ -57,7 +57,7 @@ This project offers the following packages:
 
 | Package | Description | Downloads |
 | -: | - | :- |
-| [![ton][driver-img]][ton-pkg] | Provides the .NET global tool. | ![Downloads][ton-dls] |
+| [![ton][driver-img]][driver-pkg] | Provides the .NET global tool. | ![Downloads][ton-dls] |
 | [![Vezel.Ton][core-img]][core-pkg] | Provides the core parsing, analysis, and runtime services. | ![Downloads][core-dls] |
 | [![Vezel.Ton.Tooling][tooling-img]][tooling-pkg] | Provides user-facing tooling such as syntax coloring and diagnostic rendering. | ![Downloads][tooling-dls] |
 | [![Vezel.Ton.Service][service-img]][service-pkg] | Provides the Language Server Protocol implementation. | ![Downloads][service-dls] |
